@@ -1,0 +1,162 @@
+[
+  {
+    "playlistID": 1,
+    "playlist_name": "Chill Vibes",
+    "playlist_author": "Alex Rivera",
+    "playlist_art": "../assets/img/chill-vibes.jpeg",
+    "songs": [
+      {
+        "title": "Ocean Eyes",
+        "artist": "Billie Eilish",
+        "album": "Ocean Eyes",
+        "duration": "3:20"
+      },
+      {
+        "title": "Sunflower",
+        "artist": "Post Malone",
+        "album": "Hollywood's Bleeding",
+        "duration": "2:38"
+      }
+    ]
+  },
+  {
+    "playlistID": 2,
+    "playlist_name": "Workout Pump",
+    "playlist_author": "Jordan Lee",
+    "playlist_art": "../assets/img/workout-pump.jpeg",
+    "songs": [
+      {
+        "title": "Stronger",
+        "artist": "Kanye West",
+        "album": "Graduation",
+        "duration": "5:11"
+      },
+      {
+        "title": "POWER",
+        "artist": "Kanye West",
+        "album": "My Beautiful Dark Twisted Fantasy",
+        "duration": "3:41"
+      }
+    ]
+  },
+  {
+    "playlistID": 3,
+    "playlist_name": "Late Night Drive",
+    "playlist_author": "Samantha Tran",
+    "playlist_art": "../assets/img/late-night-drive.jpeg",
+    "songs": [
+      {
+        "title": "Blinding Lights",
+        "artist": "The Weeknd",
+        "album": "After Hours",
+        "duration": "3:22"
+      },
+      {
+        "title": "Electric Feel",
+        "artist": "MGMT",
+        "album": "Oracular Spectacular",
+        "duration": "3:49"
+      }
+    ]
+  },
+  {
+    "playlistID": 4,
+    "playlist_name": "Study Focus",
+    "playlist_author": "Daniel Kim",
+    "playlist_art": "../assets/img/study-focus.jpeg",
+    "songs": [
+      {
+        "title": "Weightless",
+        "artist": "Marconi Union",
+        "album": "Weightless",
+        "duration": "8:00"
+      },
+      {
+        "title": "Night Owl",
+        "artist": "Gerry Mulligan",
+        "album": "Jazz Giants",
+        "duration": "4:13"
+      }
+    ]
+  },
+  {
+    "playlistID": 5,
+    "playlist_name": "Throwback Hits",
+    "playlist_author": "Nina Patel",
+    "playlist_art": "../assets/img/throwback-hits.jpeg",
+    "songs": [
+      {
+        "title": "No Scrubs",
+        "artist": "TLC",
+        "album": "FanMail",
+        "duration": "3:39"
+      },
+      {
+        "title": "Yeah!",
+        "artist": "Usher feat. Lil Jon & Ludacris",
+        "album": "Confessions",
+        "duration": "4:10"
+      }
+    ]
+  },
+  {
+    "playlistID": 6,
+    "playlist_name": "Indie Essentials",
+    "playlist_author": "Chris Romero",
+    "playlist_art": "../assets/img/indie-essentials.jpeg",
+    "songs": [
+      {
+        "title": "Take Me Out",
+        "artist": "Franz Ferdinand",
+        "album": "Franz Ferdinand",
+        "duration": "3:57"
+      },
+      {
+        "title": "Dog Days Are Over",
+        "artist": "Florence + The Machine",
+        "album": "Lungs",
+        "duration": "4:13"
+      }
+    ]
+  },
+  {
+    "playlistID": 7,
+    "playlist_name": "Romantic Moods",
+    "playlist_author": "Isabella Chen",
+    "playlist_art": "../assets/img/romantic-moods.jpeg",
+    "songs": [
+      {
+        "title": "All of Me",
+        "artist": "John Legend",
+        "album": "Love in the Future",
+        "duration": "4:30"
+      },
+      {
+        "title": "Thinking Out Loud",
+        "artist": "Ed Sheeran",
+        "album": "x (Multiply)",
+        "duration": "4:41"
+      }
+    ]
+  },
+  {
+    "playlistID": 8,
+    "playlist_name": "Party Starters",
+    "playlist_author": "Mike Taylor",
+    "playlist_art": "../assets/img/party-starters.jpeg",
+    "songs": [
+      {
+        "title": "Uptown Funk",
+        "artist": "Mark Ronson ft. Bruno Mars",
+        "album": "Uptown Special",
+        "duration": "4:30"
+      },
+      {
+        "title": "Can't Stop the Feeling!",
+        "artist": "Justin Timberlake",
+        "album": "Trolls (Original Motion Picture Soundtrack)",
+        "duration": "3:56"
+      }
+    ]
+  }
+]
