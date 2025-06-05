@@ -25,6 +25,22 @@ h2{
     padding-bottom: 1vh;
     margin-top: auto;
 }
+
+.hide{
+    display: none !important;
+}
+
+#no-playlist{
+    display: flex;
+    /* width: 100%; */
+    color: gray;
+    /* align-items: center; */
+    
+    /* justify-content: center; */
+}
+#no-playlist p{
+    margin-left: 1vh;
+}
 .playlist-cards{
     display: inline-flex;
     flex-wrap: wrap;
@@ -49,9 +65,10 @@ h2{
     transition: background-color 0.1s ease-in;
 }
 
-.playlist-card-image{
+.playlist-card-item img{
     width: 20vh;
-    
+    height: 20vh;
+    object-fit: cover;
 }
 .playlist-info-container{
     margin-left: 1vh;
@@ -81,6 +98,12 @@ h2{
     align-items: center;
     justify-content: space-around;
     gap: 4px;
+    z-index: 50;
+}
+
+.like-heart:hover{
+    color: red !important;
+    transition: background-color 0.1s ease-in;
 }
 
 .modal-overlay{
