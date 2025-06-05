@@ -1,4 +1,66 @@
+const shuffle = (array) => {
 
+    return array.map(a => ({sort: Math.random(), innerHTML: a}))
+        .sort((a, b) => a.sort - b.sort)
+        .map(a => a.innerHTML)
+    // let temp = array.map((a) => ({shuffle_id: Math.random() * Math.random(), innerHTML: a}))
+    // console.log("shuffle_id added:")
+    // console.log(temp);
+    
+    // temp = temp.sort((a, b) => a.shuffle_id - b.shuffle_id)
+    // console.log("sorted:");
+    // console.log(temp);
+    
+    // temp = temp.map((a) => a.innerHTML)
+    // console.log(temp);
+    // return temp
+}
+let song_items = []
+const handleMakeSongItem = (song) => {
+    song_items.push(`
+                    <img src="assets/img/song.png" alt="song png" />
+                    <div class="modal-song-item-text">
+                        <p class="duration">${song.duration}</p>
+                        <h4>${song.title}</h4>
+                        <p>${song.artist}</p>
+                        <p>${song.album}</p>
+                    </div>
+                    `
+)
+    console.log("appended song:" + song);
+    
+}
+
+const handleRenderSongs = () => { //make sure song_items is updated!
+    const modal_songs_container = document.querySelector(".modal-songs-container")
+
+    //clear old songs
+    modal_songs_container.innerHTML = `  
+        <button class="shuffle">
+            <svg viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg" aria-labelledby="shuffleIconTitle" stroke="#000000" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" fill="none" color="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title id="shuffleIconTitle">Shuffle</title> <path d="M21 16.0399H17.7707C15.8164 16.0399 13.9845 14.9697 12.8611 13.1716L10.7973 9.86831C9.67384 8.07022 7.84196 7 5.88762 7L3 7"></path> <path d="M21 7H17.7707C15.8164 7 13.9845 8.18388 12.8611 10.1729L10.7973 13.8271C9.67384 15.8161 7.84196 17 5.88762 17L3 17"></path> <path d="M19 4L22 7L19 10"></path> <path d="M19 13L22 16L19 19"></path> </g></svg>
+            <p>Shuffle<p>
+        </button>
+    ` 
+    //add shuffle listener
+    const shuffle_button = document.querySelector(".shuffle")
+    shuffle_button.addEventListener("click", () => {
+        // console.log("songs before shuffle: " + song_items);
+        song_items = shuffle(song_items)
+        // console.log(song_items);
+        
+        // console.log("songs after shuffle: " + song_items);
+        handleRenderSongs();
+    })
+
+
+    song_items.forEach((song_innerHTML) =>{
+        const song_item = document.createElement('div')
+        song_item.classList.add('modal-song-item')
+        console.log(song_item);
+        song_item.innerHTML = song_innerHTML
+        modal_songs_container.appendChild(song_item)
+    })
+}
 const dataResponse = fetch('data/data.json')
     .then(response => response.json())
     .then(data => {
@@ -75,24 +137,34 @@ const dataResponse = fetch('data/data.json')
                     `
                     // Load song info pre-render
                     console.log(activePlaylist)
-                    const modal_songs_container = document.querySelector(".modal-songs-container")
-                    modal_songs_container.innerHTML = '' //clear old songs
-                    activePlaylist.songs.forEach((song) =>{
-                        const song_item = document.createElement('div')
-                        song_item.classList.add('modal-song-item')
-                        console.log(song_item);
-                        song_item.innerHTML = `
-                                <img src="assets/img/song.png" alt="song png" />
-                                <div class="modal-song-item-text">
-                                    <p class="duration">${song.duration}</p>
-                                    <h4>${song.title}</h4>
-                                    <p>${song.artist}</p>
-                                    <p>${song.album}</p>
-                                </div>
-                        `
+                    // const modal_songs_container = document.querySelector(".modal-songs-container")
+                    // modal_songs_container.innerHTML = `
+                    //     <button class="shuffle">
+                    //         <svg viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg" aria-labelledby="shuffleIconTitle" stroke="#000000" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" fill="none" color="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title id="shuffleIconTitle">Shuffle</title> <path d="M21 16.0399H17.7707C15.8164 16.0399 13.9845 14.9697 12.8611 13.1716L10.7973 9.86831C9.67384 8.07022 7.84196 7 5.88762 7L3 7"></path> <path d="M21 7H17.7707C15.8164 7 13.9845 8.18388 12.8611 10.1729L10.7973 13.8271C9.67384 15.8161 7.84196 17 5.88762 17L3 17"></path> <path d="M19 4L22 7L19 10"></path> <path d="M19 13L22 16L19 19"></path> </g></svg>
+                    //         <p>Shuffle<p>
+                    //     </button>
+                    // ` //clear old songs
+                    // activePlaylist.songs.forEach((song) =>{
+                    //     const song_item = document.createElement('div')
+                    //     song_item.classList.add('modal-song-item')
+                    //     console.log(song_item);
+                    //     song_item.innerHTML = `
+                    //             <img src="assets/img/song.png" alt="song png" />
+                    //             <div class="modal-song-item-text">
+                    //                 <p class="duration">${song.duration}</p>
+                    //                 <h4>${song.title}</h4>
+                    //                 <p>${song.artist}</p>
+                    //                 <p>${song.album}</p>
+                    //             </div>
+                    //     `
 
-                        modal_songs_container.appendChild(song_item)
+                    //     modal_songs_container.appendChild(song_item)
+                    // })
+
+                    activePlaylist.songs.forEach((song) => {
+                        handleMakeSongItem(song)
                     })
+                    handleRenderSongs();
                     dialog.classList.add("open-modal")
                     dialog.showModal()
                 })
