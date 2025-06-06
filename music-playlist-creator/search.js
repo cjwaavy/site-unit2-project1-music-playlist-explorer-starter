@@ -5,6 +5,7 @@ const onFetch = fetch('data/data.json')
         console.log(active_playlists)
         const search_bar = document.getElementById('search-bar');
         const search_button = document.getElementById('search-button');
+        const clear_button = document.getElementById('clear-button');
         const filter_options = document.getElementById('filter-options');
         const playlist_card_items = document.querySelectorAll('.playlist-card-item');
 
@@ -40,7 +41,14 @@ const onFetch = fetch('data/data.json')
 
         }
 
+        // Clear button functionality
+        const clearSearch = () => {
+            search_bar.value = '';
+            filterPlaylists();
+        };
+
         search_button.addEventListener('click', filterPlaylists);
         search_bar.addEventListener('input', filterPlaylists);
         filter_options.addEventListener('change', filterPlaylists);
+        clear_button.addEventListener('click', clearSearch);
     });

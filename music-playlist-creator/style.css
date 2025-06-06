@@ -116,6 +116,21 @@ h2 {
     background-color: #0056b3; /* Darker shade on hover */
 }
 
+#clear-button {
+    background-color: #6c757d; /* Gray button color */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+}
+
+#clear-button:hover {
+    background-color: #5a6268; /* Darker shade on hover */
+}
+
 #filter-options {
     padding: 8px;
     border: 1px solid #ccc;
@@ -141,8 +156,27 @@ h2 {
     width: 25vh;
     padding-top: 2vh;
     align-items: center;
+    position: relative;
     /* box-shadow: 5px 5px 5px lightgray; */
     /* filter: drop-shadow(15px 15px black); */
+}
+
+.trash-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    color: #6c757d;
+    opacity: 0.7;
+    transition: color 0.3s, opacity 0.3s;
+    z-index: 10;
+}
+
+.trash-icon:hover {
+    color: #dc3545;
+    opacity: 1;
 }
 
 .playlist-card-item:hover {
