@@ -1,15 +1,19 @@
 body, html{
     /* display: flex; */
-    font-family: "Arial", sans-serif;
+    font-family: 'Roboto', sans-serif; /* Set Roboto as the default font */
+    font-weight: 300;
     margin: 0;
     padding: 0;
     background-color: #f8f8f8;
     height: 100%;
 }
 main{
+    display: flex;
+    flex-direction: column;
     min-height: 100%;
     margin-bottom: -3vh;
-
+    align-items: center;
+    /* justify-content: center; */
 }
 main:after{
     content: "";
@@ -73,14 +77,63 @@ h2 {
 #no-playlist p {
     margin-left: 1vh;
 }
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 10px;
+}
+
+#search-bar {
+    width: 50vh; /* Default width */
+    flex: none; /* Ensure it doesn't grow or shrink */
+    padding: 8px;
+    border: 0;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 1012px) {
+    #search-bar {
+        width: 80%; /* Width when screen is 1012px or less */
+    }
+}
+
+
+#search-button {
+    background-color: #007bff; /* Button color */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#search-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+#filter-options {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    background-color: white;
+    cursor: pointer;
+}
+
 .playlist-cards {
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
     column-gap: 1em;
     row-gap: 1em;
     width: 95%;
-    margin-right: 5%;
-    margin-left: 5%;
+    justify-content: center;
+    /* margin-right: 5%;
+    margin-left: 5%; */
 }
 .playlist-card-item {
     display: flex;
@@ -161,7 +214,7 @@ h2 {
         width: 100vh;
         height: 40vh;
         border-radius: 1vh;
-        background-color: #f8f8f8; 
+        background-color: #f8f8f8;
     } */
     .modal-overlay{
         width: 120vh;
@@ -214,7 +267,7 @@ h2 {
     margin-block-end: 0;
     padding-top: 0vh;
     padding-bottom: 0vh;
-    font-weight: 300;
+    font-weight: 500;
 }
 
 .modal-songs-container {
@@ -242,7 +295,7 @@ h2 {
 
 .modal-song-item-text h4 {
     margin: 0.25vh 0 0.25vh 0;
-    font-weight: 300;
+    font-weight: 400;
 }
 .modal-song-item-text p {
     margin: 0;
