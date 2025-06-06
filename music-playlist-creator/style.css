@@ -1,23 +1,55 @@
-body {
+body, html{
     /* display: flex; */
     font-family: "Arial", sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f8f8f8;
+    height: 100%;
 }
-header {
+main{
+    min-height: 100%;
+    margin-bottom: -3vh;
+
+}
+main:after{
+    content: "";
+    display: block;
+    height: 100px;
+}
+nav {
     margin: 0;
     padding: 0;
     top: 0;
     width: 100%;
-    background-color: #eee;
+    background-color: #e8e8e8;
+    display: inline-flex;
+    justify-content: space-between;
+}
+nav h2{
+    margin-block-end: 0;
+}
+.nav-buttons-container{
+    /* position: absolute;
+    right: 1vh;
+    top: 30% */
+    margin-top: 1.5vh;
+    margin-right: 2vh;
+}
+.nav-button{
+    border: 0;
+    background-color: rgb(0 0 0 / 0%);
+}
+.nav-button:hover{
+    border: 0;
+    background-color: rgb(0 0 0 / 5%);
 }
 footer {
-    position: fixed;
-    bottom: 0;
+    /* position: fixed; */
+    /* bottom: 0; */
+    height: 3vh;
     width: 100%;
-    /* height: 2vh; */
-    background-color: #eee;
+    background-color: #e8e8e8;
+
 }
 h2 {
     padding-top: 1vh;
@@ -116,10 +148,12 @@ h2 {
     padding: 0px;
     border: 0px solid black;
     height: 80vh;
+    box-shadow: 10px 10px 10px 10px rgb(0 0 0 / 5%);
 }
 ::backdrop {
-    background-color: gray;
-    opacity: 75%;
+    background-color: rgb(199 199 199 / 30%);
+    backdrop-filter: blur(8px);
+    /* -webkit-backdrop-filter: blur(8px); */
 }
 @media screen and (min-width: 1012px) {
     /* .playlist-modal {
@@ -134,8 +168,8 @@ h2 {
     }
 
 }
-@media screen and (max-width: 1012px) {
-}
+/* @media screen and (max-width: 1012px) {
+} */
 .playlist-modal {
     display: flex;
     width: 100%;
